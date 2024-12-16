@@ -14,11 +14,11 @@ import Image from "next/image";
 
 const CarsCarousel = () => {
   const cars = [
-    { name: "tata indica", link: "", img: "./cars/car1.png" },
-    { name: "tata indica1", link: "", img: "./cars/car1.png" },
-    { name: "tata indica3", link: "", img: "./cars/car1.png" },
-    { name: "tata indica4", link: "", img: "./cars/car1.png" },
-    { name: "tata indica5", link: "", img: "./cars/car1.png" },
+    { name: "tata indica", link: "", img: "/cars/car1.png" },
+    { name: "tata indica1", link: "", img: "/cars/car1.png" },
+    { name: "tata indica3", link: "", img: "/cars/car1.png" },
+    { name: "tata indica4", link: "", img: "/cars/car1.png" },
+    { name: "tata indica5", link: "", img: "/cars/car1.png" },
   ];
 
   // const plugin = React.useRef(
@@ -40,7 +40,7 @@ const CarsCarousel = () => {
   };
 
   return (
-    <div className="relative flex items-center justify-center h-screen overflow-hidden">
+    <div className="relative flex items-center justify-center h-fit overflow-hidden">
       <Carousel className="w-full max-w-3xl">
         <CarouselContent>
           {cars.map((car, index) => (
@@ -66,8 +66,8 @@ const CarsCarousel = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="shadow-none border-none" />
-        <CarouselNext className="shadow-none border-none" />
+        <CarouselPrevious className=" border-none" />
+        <CarouselNext className=" border-none" />
       </Carousel>
       {/* <Carousel
       opts={{ loop: true }}

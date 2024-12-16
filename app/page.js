@@ -20,7 +20,7 @@ function Page() {
             From as low as 10 per day with limited time offer
           </h2>
 
-          <div className="flex px-40 items-center justify-center w-full space-x-2">
+          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 px-4 md:px-40 items-center justify-center w-full md:space-x-2">
             <select
               className="px-12 w-full py-2 appearance-none h-fit rounded text-gray-500 focus:outline-none focus:ring-0"
               value="All cars"

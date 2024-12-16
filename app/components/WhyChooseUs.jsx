@@ -14,7 +14,7 @@ const WhyChooseUs = () => {
             Explore our first class limousine & car rental services
 
         </h2>
-        <div className='flex flex-row mx-40 '>
+        <div className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:mx-40 '>
             <div className='flex flex-col items-center justify-center text-center'>
                 <LiaCarSideSolid className='text-6xl'/>
                 <h1 className='text-xl font-[700] py-2'>
