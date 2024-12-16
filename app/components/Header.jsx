@@ -6,7 +6,7 @@ import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa"
 import { CiLocationOn, CiMobile4, CiAlarmOn } from "react-icons/ci";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-export default function Header({ children }) {
+export default function Header() {
   const [activeTab, setActiveTab] = useState("Home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [opacity, setOpacity] = useState(0.3); 
@@ -19,12 +19,12 @@ export default function Header({ children }) {
 
   const navLinks = [
     { title: "Home", path: "/" },
-    { title: "Cars", path: "/Cars" },
-    { title: "Booking", path: "/Booking" },
-    { title: "Pages", path: "/Pages" },
-    { title: "Blog", path: "/Blog" },
-    { title: "Shortcodes", path: "/Shortcodes" },
-    { title: "Shop", path: "/Shop" },
+    { title: "Cars", path: "/cars" },
+    { title: "Booking", path: "/booking" },
+    { title: "Pages", path: "/pages" },
+    { title: "Blog", path: "/blog" },
+    { title: "Shortcodes", path: "/shortcodes" },
+    { title: "Shop", path: "/shop" },
   ];
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function Header({ children }) {
   }, []);
 
   return (
-    <div>
+    <>
       {/* top header black */}
       <div className="bg-black z-50 text-white px-4 md:px-40 py-4">
         <div className="flex justify-between items-center">
@@ -116,8 +116,7 @@ export default function Header({ children }) {
         </nav>
       </div>
 
-      {/* Main Content */}
-      <div className="relative mt-[-76px]">{children}</div>
-    </div>
+
+    </>
   );
 }

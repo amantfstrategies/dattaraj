@@ -11,9 +11,9 @@ const Footer = () => {
         <div className="flex flex-col w-full text-start">
           <h1 className="text-xl font-[700] pt-12">About Us</h1>
           <p className="text-sm leading-relaxed text-[#CCCCCC] pt-2">
-            About Us Getting dressed up and traveling with good friends makes
-            for a shared, unforgettable experience
+            About Us Getting dressed up and traveling with good friends makes for a shared, unforgettable experience
           </p>
+
           <div>
             <h1 className="text-4xl text-white py-2 font-[700]">Dattaraj</h1>
           </div>
@@ -55,8 +55,9 @@ const Footer = () => {
         <div className="flex flex-col w-full text-start">
           <h1 className="text-xl font-[700] pt-12">Newsletter</h1>
           <p className="text-sm leading-relaxed text-[#CCCCCC] pt-2">
-          Don't miss a thing! Sign up to receive daily deals
+            Don&apos;t miss a thing! Sign up to receive daily deals
           </p>
+
         </div>
       </div>
 
