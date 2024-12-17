@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-const SimilarCars = ({ similarProducts }) => {
+const SimilarCars = ({ similarProducts, vehicle }) => {
   return (
     <div className='mx-40'>
       <h2 className='w-full border-b text-xl font-[700] border-[#E5E5E5]'>Similar Cars</h2>
@@ -10,17 +10,19 @@ const SimilarCars = ({ similarProducts }) => {
         {/* Map through the products */}
         {similarProducts?.map((product) => {
           return (
-            <Link href={`/cars/${product.id}`} key={product.id} className='w-full'>
+            <Link href={`/${vehicle}/${product.id}`} key={product.id} className='w-fit'>
               <div className='w-full rounded-md border-2 z-20 border-gray-300 transform transition-transform duration-300 hover:translate-y-[-10px] hover:shadow-lg'>
                 <div className='flex flex-col items-center gap-1 pb-2'>
                   {/* Use the unoptimized prop for dynamic images */}
-                  <Image
-                    className='rounded-t-md z-10'
-                    src={product.car.image}
-                    alt={product.id}
-                    width={1000}
-                    height={1000}
-                  />
+                  <div className='w-full h-60 relative'>
+                    <Image
+                      className='rounded-t-md h-full object-cover'
+                      src={product.car.image}
+                      alt={product.id}
+                      width={400}   // Set the width you want
+                      height={240}  // Set the height you want
+                    />
+                  </div>
                   <div className='flex flex-row justify-between w-full px-2 py-2 items-center gap-4'>
                     <h2 className='text-lg font-[700]'>{product.car.name}</h2>
                     <div>

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { SiTicktick } from "react-icons/si";
 import { RxCrossCircled } from "react-icons/rx";
 import Link from 'next/link';
-import {CarData} from '../../CarData'
+import {CarData} from '../../luxuryBusesData'
 import SimilarCars from '../../components/SimilarCars';
 
 
@@ -14,12 +14,15 @@ function Page({params}) {
     const pageData = CarData.find((car) => car.id === params.car);
 
     const currentIndex = CarData.findIndex((car) => car.id === params.car);
+
+    // Get the next cars based on available data
+    const nextCarsCount = Math.min(3, CarData.length - 1);  // Show up to 3 cars, but not more than available
+    const nextCars = [];
     
-    const nextThreeCars = [
-      CarData[(currentIndex + 1) % CarData.length],
-      CarData[(currentIndex + 2) % CarData.length],
-      CarData[(currentIndex + 3) % CarData.length]
-    ];
+    for (let i = 1; i <= nextCarsCount; i++) {
+      nextCars.push(CarData[(currentIndex + i) % CarData.length]);
+    }
+    
   return (
     <div>
       <div className="relative">
@@ -118,7 +121,7 @@ function Page({params}) {
           </div>
         </div>
       </div>
-      <SimilarCars similarProducts={nextThreeCars} vehicle={"cars"}/>
+      <SimilarCars similarProducts={nextCars} vehicle={"luxury-bus"}/>
     </div>
   );
 }

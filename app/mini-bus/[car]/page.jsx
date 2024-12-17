@@ -6,63 +6,32 @@ import Image from 'next/image';
 import { SiTicktick } from "react-icons/si";
 import { RxCrossCircled } from "react-icons/rx";
 import Link from 'next/link';
+import {CarData} from '../../MiniBusesData'
+import SimilarCars from '../../components/SimilarCars';
 
-const pageData = {
-  car: {
-    name: "Audi A3",
-    image: {
-      src: "/carImages/audi.jpg",
-      alt: "audi",
-      dimensions: { width: 1000, height: 1000 },
-    },
-    features: [
-      { icon: ImManWoman, description: "4 Passengers" },
-      { icon: FaShoppingBag, description: "2 Luggages" },
-      { icon: AiOutlineControl, description: "Auto" },
-      { icon: FaCarSide, description: "4 Doors" },
-    ],
-  },
-  details: [
-    {
-      title: "Refueling",
-      description:
-        "Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse nihil, flexitarian Truffaut synth art party deep v chillwave. Seitan High Life reprehenderit consectetur cupidatat kogi. Et leggings fanny pack, elit bespoke vinyl art party Pitchfork selfies master cleanse.",
-    },
-    {
-      title: "Car Wash",
-      description:
-        "Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Selfies iPhone Kickstarter, drinking vinegar jean vinegar stumptown yr pop-up artisan sunt. Craft beer elit seitan exercitation, photo booth.",
-    },
-    {
-      title: "No Smoking",
-      description:
-        "See-through delicate embroidered organza blue lining luxury acetate-mix stretch pleat detailing. Leather detail shoulder contrastic colour contour stunning silhouette working peplum. Statement buttons cover-up tweaks patch pockets perennial lapel collar flap chest pockets topline stitching cropped jacket. Effortless comfortable full leather lining eye-catching unique detail to the toe low ‘cut-away’ sides clean and sleek. Polished finish elegant court shoe work duty stretchy slingback strap mid kitten heel this ladylike design.",
-    },
-  ],
-  included: [
-    "Audio Input",
-    "Bluetooth",
-    "Heated Seats",
-    "All Wheel drive",
-    "USB Input",
-    "FM Radio",
-  ],
-  notIncluded: ["GPS Navigation", "Sun-roof"],
-  pricing: {
-    perDay: 7000,
-    currency: "INR",
-  },
-};
 
-function Page() {
+function Page({params}) {
+    const pageData = CarData.find((car) => car.id === params.car);
+    
+
+    const currentIndex = CarData.findIndex((car) => car.id === params.car);
+
+    // Get the next cars based on available data
+    const nextCarsCount = Math.min(3, CarData.length - 1);  // Show up to 3 cars, but not more than available
+    const nextCars = [];
+    
+    for (let i = 1; i <= nextCarsCount; i++) {
+      nextCars.push(CarData[(currentIndex + i) % CarData.length]);
+    }
+    
   return (
     <div>
       <div className="relative">
         <Image
-          src={pageData.car.image.src}
-          height={pageData.car.image.dimensions.height}
-          width={pageData.car.image.dimensions.width}
-          alt={pageData.car.image.alt}
+          src={pageData.car.image}
+          height={1000}
+          width={1000}
+          alt={pageData.id}
           className="object-cover origin-center w-full h-[600px]"
         />
         <div className="ml-40 mt-10">
@@ -153,6 +122,7 @@ function Page() {
           </div>
         </div>
       </div>
+      <SimilarCars similarProducts={nextCars} vehicle={"mini-bus"}/>
     </div>
   );
 }
