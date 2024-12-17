@@ -25,36 +25,25 @@ const CarsCarousel = () => {
   //   Autoplay({ delay: 2000, stopOnInteraction: true })
   // )
 
-  const [activeIndex, setActiveIndex] = React.useState(1);
 
-  const handlePrevious = () => {
-    setActiveIndex((prevIndex) =>
-      prevIndex === 0 ? cars.length - 1 : prevIndex - 1
-    );
-  };
 
-  const handleNext = () => {
-    setActiveIndex((prevIndex) =>
-      prevIndex === cars.length - 1 ? 0 : prevIndex + 1
-    );
-  };
 
   return (
-    <div className="relative flex items-center justify-center h-fit overflow-hidden">
-      <Carousel className="w-full max-w-3xl">
-        <CarouselContent>
+    <div className="relative flex items-center justify-center overflow-hidden">
+      <Carousel className="w-full h-fit max-w-5xl my-0 py-0">
+        <CarouselContent className="my-0 py-0">
           {cars.map((car, index) => (
-            <CarouselItem key={index}>
+            <CarouselItem className="my-0 py-0" key={index}>
               <div className="p-1">
-                <Card className="shadow-none border-none">
-                  <CardContent className="flex flex-col shadow-none border-none aspect-square items-center justify-center p-6">
+                <Card className="shadow-none border-none my-0 py-0">
+                  <CardContent className="flex flex-col shadow-none border-none aspect-square items-center justify-center my-0 py-0">
                     <Image
                       src={car.img}
                       alt={car.name}
                       layout="responsive"
                       width={500}
                       height={300}
-                      className="w-full h-fit"
+                      className="w-full h-fit my-0 py-0"
                     />
                     <span className="text-3xl font-semibold">{car.name}</span>
                     <button className="my-8 py-2 px-8 rounded-sm font-[300] text-[#04DBC0] bg-black hover:font-[400] hover:bg-[#2c2b2b]">
