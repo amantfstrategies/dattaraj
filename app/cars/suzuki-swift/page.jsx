@@ -79,27 +79,27 @@ function Page() {
                     <div className="p-5">
                         <div className="my-4">
                             <h2 className='pb-2'>Full Name</h2>
-                            <Input type="text" className='' />
+                            <input type="text" className='border-b border-black' />
                         </div>
                         <div className="my-4">
                             <h2 className='pb-2'>Email Address</h2>
-                            <Input type="email" className='' />
+                            <input type="email" className='border-b border-black' />
                         </div>
                         <div className="my-4">
                             <h2 className='pb-2'>Phone Number</h2>
-                            <Input type="tel" className='' />
+                            <input type="tel" className='border-b border-black' />
                         </div>
                         <div className="my-4">
                             <h2 className='pb-2'>Pickup Address</h2>
-                            <Input type="text" className='' />
+                            <input type="text" className='border-b border-black' />
                         </div>
                         <div className="my-4">
                             <h2 className='pb-2'>Pickup Date</h2>
-                            <Input type="date" className='' />
+                            <input type="date" className='border-b border-black' />
                         </div>
                         <div className="my-4">
                             <h2 className='pb-2'>Pickup Time</h2>
-                            <Input type="time" className='' />
+                            <input type="time" className='border-b border-black' />
                         </div>
                         <Link href="/car/audi" className="my-4 bg-slate-400 flex justify-center p-4 text-xl font-semibold">
                             Button

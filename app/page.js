@@ -31,7 +31,7 @@ function Page() {
               className="px-12 w-full py-2 appearance-none h-fit rounded text-gray-500 focus:outline-none focus:ring-0"
               value="All cars"
             >
-              <SlArrowDown className="text-black" />
+              {/* <SlArrowDown className="text-black" /> */}
               <option>All cars </option>
               <option>Audi</option>
               <option>BMW</option>
@@ -40,7 +40,7 @@ function Page() {
               className="px-12 w-full py-2 appearance-none h-fit rounded text-gray-500 focus:outline-none focus:ring-0"
               value="All cars"
             >
-              <SlArrowDown className="text-black" />
+              {/* <SlArrowDown className="text-black" /> */}
               <option>All cars </option>
               <option>Audi</option>
               <option>BMW</option>
@@ -50,7 +50,7 @@ function Page() {
               className="px-12 w-full py-2 appearance-none h-fit rounded text-gray-500 focus:outline-none focus:ring-0"
               value="All cars"
             >
-              <SlArrowDown className="text-black" />
+              {/* <SlArrowDown className="text-black" /> */}
               <option>All cars </option>
               <option>Audi</option>
               <option>BMW</option>
