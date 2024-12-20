@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+// import ReCAPTCHA from 'react-google-recaptcha';
 
 const Page = () => {
   const [formData, setFormData] = useState({
@@ -20,12 +20,12 @@ const Page = () => {
     });
   };
 
-  const handleCaptchaChange = (value) => {
-    setFormData({
-      ...formData,
-      isRobotVerified: !!value,
-    });
-  };
+  // const handleCaptchaChange = (value) => {
+  //   setFormData({
+  //     ...formData,
+  //     isRobotVerified: !!value,
+  //   });
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -97,12 +97,12 @@ const Page = () => {
               <option value="luxury bus">Luxury Bus</option>
             </select>
           </div>
-          <div>
+          {/* <div>
             <ReCAPTCHA
               sitekey="your-site-key"
               onChange={handleCaptchaChange}
             />
-          </div>
+          </div> */}
           <button
             type="submit"
             className="w-full bg-[#04DBC0] text-white py-2 px-4 rounded-md  focus:outline-none focus:ring focus:[#04DBC0]"
