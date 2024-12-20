@@ -33,7 +33,7 @@ function Page({params}) {
           alt={pageData.id}
           className="object-cover origin-center w-full h-[600px]"
         />
-        <div className="ml-40 mt-10">
+        <div className="ml-40 mr-40 mt-10">
           <div className="w-3/5">
             <h2 className="text-4xl font-semibold">{pageData.car.name}</h2>
             <div className="border-dashed hover:border-solid border-y-2 px-10 border-black py-4 my-4 flex items-center justify-between">

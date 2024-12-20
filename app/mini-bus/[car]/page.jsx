@@ -7,7 +7,7 @@ import { SiTicktick } from "react-icons/si";
 import { RxCrossCircled } from "react-icons/rx";
 import Link from 'next/link';
 import {CarData} from '../../MiniBusesData'
-import SimilarCars from '../../components/SimilarCars';
+import SimilarCars from '@/components/SimilarCars';
 
 
 function Page({params}) {
