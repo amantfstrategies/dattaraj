@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const CarCard = ({ car, id }) => {
+const CarCard = ({ car, id, vehicleName }) => {
   return (
-    <Link href={`/cars/${id}`}>
+    <Link href={`/${vehicleName}/${id}`}>
       <div className="relative group bg-white shadow-lg rounded-md overflow-hidden transform hover:scale-105 transition-transform duration-300 w-full h-64">
         {/* Image */}
         <Image
@@ -34,7 +34,7 @@ const CarCard = ({ car, id }) => {
   );
 };
 
-const CarList = ({ cars }) => {
+const CarList = ({ cars, vehicleName }) => {
   return (
     <div className="bg-gray-100 min-h-screen md:px-40 pt-12 md:pt-24 px-4 py-4">
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
@@ -42,7 +42,7 @@ const CarList = ({ cars }) => {
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {cars.map(({ id, car }) => (
-          <CarCard key={id} id={id} car={car} />
+          <CarCard key={id} id={id} car={car} vehicleName={vehicleName} />
         ))}
       </div>
     </div>

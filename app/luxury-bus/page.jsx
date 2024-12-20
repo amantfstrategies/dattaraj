@@ -5,7 +5,7 @@ import { CarData } from '../luxuryBusesData'
 const page = () => {
   return (
     <div>
-      <CarList cars={CarData}/>
+      <CarList cars={CarData} vehicleName={"luxury-bus"}/>
     </div>
   )
 }

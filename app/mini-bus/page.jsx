@@ -12,7 +12,7 @@ import { CarData } from '../MiniBusesData'
 const page = () => {
   return (
     <div>
-      <CarList cars={CarData}/>
+      <CarList cars={CarData} vehicleName={"mini-bus"}/>
     </div>
   )
 }
