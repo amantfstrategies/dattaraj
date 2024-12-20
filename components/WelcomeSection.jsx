@@ -16,16 +16,14 @@ const WelcomeSection = () => {
 
       {/* Foreground Content */}
       <h1 className="text-4xl font-[900] text-white text-center">
-        Our Fleet, Your Fleet
+      Welcome to
+      Dattaraj Car Rental
       </h1>
       <p className="text-base text-center font-[500] px-8 md:px-80 py-4 text-white">
-        We know the difference is in the details and that’s why our car rental
-        services, in the tourism <br />
-        and business industry, stand out for their quality and good taste, to
-        offer you a unique experience.
+      We are a Kolhapur born, Kolhapur based travel solutions agency delivering excellent travel and rental services to people in Kolhapur. Our years of experience in the city, and familiarity with the culture and routes of the area make us a dependable travel companion for all your trips, whether personal, or in groups.
       </p>
       <h2 className="text-3xl font-[500] py-4 text-white">
-        Call Now (54)-344-4533-4
+        Call Now +91 7841959650
       </h2>
     </div>
   );

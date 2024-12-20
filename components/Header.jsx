@@ -42,14 +42,7 @@ export default function Header() {
         { title: "Tempo Traveler", path: "/mini-bus" },
       ],
     },
-    {
-      title: "Taxi",
-      dropdownItems: [
-        { title: "Dzire", path: "/taxi" },
-        { title: "Ciaz", path: "/taxi" },
-        { title: "Tata Indica", path: "/taxi" },
-      ],
-    },
+
     { title: "Booking", path: "/booking", showUpArrow: false },
   ];
 
@@ -96,7 +89,7 @@ export default function Header() {
             <div className="flex items-center space-x-2 flex-row">
               <CiMobile4 className="text-[#04DBC0]" />
               <h1 className="text-[10px] md:text-sm whitespace-nowrap">
-                +91 9529575726
+              +91 7841959650
               </h1>
             </div>
 

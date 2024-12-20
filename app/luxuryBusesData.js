@@ -1,7 +1,7 @@
 import { FaRupeeSign, FaShoppingBag, FaCarSide } from "react-icons/fa";
 import { ImManWoman } from "react-icons/im";
 import { AiOutlineControl } from "react-icons/ai";
-export const CarData = [
+export const LuxuryBusesData = [
   {
     id: "mercedes",
     car: {

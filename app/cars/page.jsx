@@ -4,7 +4,7 @@ import CarList from '@/components/CarList'
 import { CarData } from '../CarData'
 const page = () => {
   return (
-    <div>
+    <div className='bg-gray-100 min-h-screen py-20'>
       <CarList cars={CarData} vehicleName="cars"/>
     </div>
   )
