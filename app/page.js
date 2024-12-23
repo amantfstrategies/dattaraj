@@ -22,6 +22,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 
+import CarListHome from "@/components/CarListHome";
+
 
 
 
@@ -32,16 +34,18 @@ function Page() {
   return (
     <div>
       <div className="relative w-full h-screen">
-        <Image
-          src="/bgimage.jpg" 
-          alt="Background"
-          layout="fill" 
-          objectFit="cover" 
-          objectPosition="center" 
-          priority
-        />
+      {/* Background Video */}
+      <div className="fixed top-0 left-0 w-full h-full z-[-1]">
+        <video
+          className="w-full h-full object-cover"
+          src="/videoplayback.mp4"
+          autoPlay
+          muted
+          loop
+        ></video>
+      </div>
 
-        <div className="absolute inset-0 bg-black opacity-30"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
 
         <div className=" mt-20 absolute inset-0 flex flex-col justify-center items-center text-center text-white space-y-4">
           <h1 className="text-6xl text-start font-bold mr-auto md:ml-40 mb-4 px-4">Trusted & Affordable Car
@@ -121,11 +125,11 @@ function Page() {
 
 
       <div className="py-20 bg-gray-100">
-        <CarList cars={CarData} vehicleName="cars"/>
+        <CarListHome cars={CarData} vehicleName="cars"/>
 
-        <CarList cars={LuxuryBusesData} vehicleName="luxury-bus"/>
+        <CarListHome cars={LuxuryBusesData} vehicleName="luxury-bus"/>
 
-        <CarList cars={MiniBusesData} vehicleName="mini-bus"/>
+        <CarListHome cars={MiniBusesData} vehicleName="mini-bus"/>
       </div>
       <WelcomeSection/>
       <WhyChooseUs />

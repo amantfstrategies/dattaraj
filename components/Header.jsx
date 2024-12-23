@@ -156,8 +156,9 @@ export default function Header() {
                 )}
                 {dropdownItems && <MdKeyboardArrowDown className={`block`} />}
                 {dropdownOpen === title && dropdownItems && (
-                  <ul className="absolute z-50 whitespace-nowrap top-full left-0 bg-white text-black shadow-md rounded-md py-2">
+                  <ul key={title} className="absolute z-50 whitespace-nowrap top-full left-0 bg-white text-black shadow-md rounded-md py-2">
                     {dropdownItems.map(({ title, path }) => (
+                      <Link key={title} href={path}>
                       <li
                         key={title}
                         className="px-4 py-2 hover:bg-gray-100"
@@ -166,8 +167,9 @@ export default function Header() {
                           setIsMobileMenuOpen(false);
                         }}
                       >
-                        <Link href={path}>{title}</Link>
+                        {title}
                       </li>
+                      </Link>
                     ))}
                   </ul>
                 )}
