@@ -39,7 +39,7 @@ const Page = () => {
   };
 
   return (
-    <div className="min-h-screen h-fit flex items-center justify-center bg-gray-100 py-40">
+    <div className="min-h-screen h-fit flex items-center justify-center px-4 bg-gray-100 py-40">
       <div className="bg-white h-fit shadow-md rounded px-8 py-6 w-full max-w-md">
         <h1 className="text-2xl font-bold mb-6 text-center">Enquiry Form</h1>
         <form onSubmit={handleSubmit} className="space-y-4 h-fit">

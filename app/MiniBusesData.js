@@ -3,17 +3,17 @@ import { ImManWoman } from "react-icons/im";
 import { AiOutlineControl } from "react-icons/ai";
 export const MiniBusesData = [
   {
-    id: "force-traveler",
+    id: "14-seat-minibus",
     car: {
-      name: "Force Traveler",
-      image: "/carImages/forcer-traveler.jpg",
+      name: "14 Seater AC/ Non Ac Pushback Seat",
+      image: "/cars/temo-traveller.png",
  
       features: [
-        { icon: ImManWoman, description: "4 Passengers" },
-        { icon: FaShoppingBag, description: "2 Luggages" },
-        { icon: AiOutlineControl, description: "Auto" },
-        { icon: FaCarSide, description: "4 Doors" },
-      ],
+        { name: "AC", value: "4000" },
+        { name: "Non AC", value: "3500" },
+        { name: "Extra km/hrs. (AC)", value: "20/Km" },
+        { name: "Extra km/hrs. (Non AC)", value: "20/Km" },
+      ]
     },
     details: [
       {
@@ -51,16 +51,17 @@ export const MiniBusesData = [
 
 
   {
-    id: "tampo-traveler",
+    id: "17-seat-minibus",
     car: {
-      name: "Tampo Traveler",
-      image: "/carImages/tampo-traveler.jpg",
+      name: "17 Seater AC/ Non Ac Pushback Seat",
+      image: "/cars/temo-traveller.png",
+ 
       features: [
-        { icon: ImManWoman, description: "4 Passengers" },
-        { icon: FaShoppingBag, description: "2 Luggages" },
-        { icon: AiOutlineControl, description: "Auto" },
-        { icon: FaCarSide, description: "4 Doors" },
-      ],
+        { name: "AC", value: "4000" },
+        { name: "Non AC", value: "3500" },
+        { name: "Extra km/hrs. (AC)", value: "20/Km" },
+        { name: "Extra km/hrs. (Non AC)", value: "20/Km" },
+      ]
     },
     details: [
       {
@@ -93,21 +94,20 @@ export const MiniBusesData = [
       currency: "INR",
     },
   } ,
-
-
 
 
   {
-    id: "tata-starbus",
+    id: "20-seat-minibus",
     car: {
-      name: "Tata Starbus",
-      image: "/carImages/tata-starbus.jpg",
+      name: "20 Seater AC/ Non Ac Pushback Seat",
+      image: "/cars/temo-traveller.png",
+ 
       features: [
-        { icon: ImManWoman, description: "4 Passengers" },
-        { icon: FaShoppingBag, description: "2 Luggages" },
-        { icon: AiOutlineControl, description: "Auto" },
-        { icon: FaCarSide, description: "4 Doors" },
-      ],
+        { name: "AC", value: "4000" },
+        { name: "Non AC", value: "3500" },
+        { name: "Extra km/hrs. (AC)", value: "20/Km" },
+        { name: "Extra km/hrs. (Non AC)", value: "20/Km" },
+      ]
     },
     details: [
       {
@@ -140,11 +140,6 @@ export const MiniBusesData = [
       currency: "INR",
     },
   } ,
-
-
-
-
- 
 ]
 
   

@@ -3,10 +3,15 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
 import { CiLocationOn, CiMobile4, CiAlarmOn } from "react-icons/ci";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { GiHamburgerMenu } from "react-icons/gi";  // Import the hamburger icon
+import { GiHamburgerMenu } from "react-icons/gi"; // Import the hamburger icon
 
 export default function Header() {
   const pathname = usePathname();
@@ -77,7 +82,7 @@ export default function Header() {
   return (
     <>
       <div className="bg-black z-50 text-white px-4 md:px-40 py-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between px-4 items-center">
           <div className="flex space-x-1 md:space-x-8 flex-row mr-auto">
             <div className="flex items-center space-x-2 flex-row">
               <CiLocationOn className="text-[#04DBC0]" />
@@ -89,13 +94,15 @@ export default function Header() {
             <div className="flex items-center space-x-2 flex-row">
               <CiMobile4 className="text-[#04DBC0]" />
               <h1 className="text-[10px] md:text-sm whitespace-nowrap">
-              +91 7841959650
+                +91 7841959650
               </h1>
             </div>
 
             <div className="flex items-center md:space-x-2 flex-row">
               <CiAlarmOn className="text-[#04DBC0]" />
-              <h1 className="text-[10px] md:text-sm">Mon - Fri , 10:30 To 06:00</h1>
+              <h1 className="text-[10px] md:text-sm">
+                <span className="whitespace-nowrap">Mon - Fri , 10:30</span> <span> To 06:00</span>
+              </h1>
             </div>
           </div>
 
@@ -113,8 +120,6 @@ export default function Header() {
               <FaLinkedin />
             </button>
           </div>
-
-
         </div>
       </div>
 
@@ -124,36 +129,40 @@ export default function Header() {
           backgroundColor: bgColor,
         }}
       >
-        <nav className="flex justify-between items-center  md:py-0 px-8 md:px-0 md:mx-40">
+        <nav className="flex justify-between items-center py-4 md:py-0 px-8 md:px-0 md:mx-40">
           <div>
             <h1 className="text-4xl text-white font-[700]">Dattaraj</h1>
           </div>
+          {/* Desktop View */}
           <ul
-            className={`${
-              isMobileMenuOpen
-                ? "flex flex-col space-y-4 w-full text-center  absolute left-0 top-full bg-black text-white "
-                : "hidden md:flex md:flex-row md:space-x-8"
-            } text-sm font-medium ml-auto text-white md:my-7`}
+            className={`hidden md:flex md:flex-row md:space-x-8 text-sm font-medium ml-auto text-white md:my-7`}
           >
             {navLinks.map(({ title, path, dropdownItems }) => (
               <li
                 key={title}
-                className={`relative flex hover:text-[#04DBC0] items-center space-x-1 ${
-                  activeTab === title ? "text-[#04DBC0]" : ""
-                }`}
+                className={`relative flex hover:text-[#04DBC0] items-center space-x-1 ${activeTab === title ? "text-[#04DBC0]" : ""}`}
                 onMouseEnter={() => dropdownItems && setDropdownOpen(title)}
                 onMouseLeave={() => dropdownItems && setDropdownOpen(null)}
               >
                 {!dropdownItems ? (
-                  <Link href={path}>{title}</Link>
+                  <Link href={path} onClick={() => setIsMobileMenuOpen(false)}>
+                    {title}
+                  </Link>
                 ) : (
                   <span className="cursor-pointer">{title}</span>
                 )}
                 {dropdownItems && <MdKeyboardArrowDown className={`block`} />}
                 {dropdownOpen === title && dropdownItems && (
-                  <ul className="absolute whitespace-nowrap top-full left-0 bg-white text-black shadow-md rounded-md py-2">
+                  <ul className="absolute z-50 whitespace-nowrap top-full left-0 bg-white text-black shadow-md rounded-md py-2">
                     {dropdownItems.map(({ title, path }) => (
-                      <li key={title} className="px-4 py-2 hover:bg-gray-100">
+                      <li
+                        key={title}
+                        className="px-4 py-2 hover:bg-gray-100"
+                        onClick={() => {
+                          setDropdownOpen(null);
+                          setIsMobileMenuOpen(false);
+                        }}
+                      >
                         <Link href={path}>{title}</Link>
                       </li>
                     ))}
@@ -162,8 +171,52 @@ export default function Header() {
               </li>
             ))}
           </ul>
-                    {/* Hamburger Button for Mobile View */}
-                    <div className="md:hidden flex items-center space-x-4">
+
+          {/* Mobile View */}
+          <ul
+            className={`md:hidden flex flex-col space-y-4 w-full text-center px-8 py-4 absolute left-0 top-full bg-black text-white transition-all duration-500 ease-in-out transform ${
+              isMobileMenuOpen
+                ? "opacity-100 max-h-screen scale-y-100"
+                : "opacity-0 max-h-0 scale-y-0"
+            }`}
+          >
+            {navLinks.map(({ title, path, dropdownItems }) => (
+              <li
+                key={title}
+                className={`relative flex hover:text-[#04DBC0] items-center space-x-1 ${activeTab === title ? "text-[#04DBC0]" : ""}`}
+                onMouseEnter={() => dropdownItems && setDropdownOpen(title)}
+                onMouseLeave={() => dropdownItems && setDropdownOpen(null)}
+              >
+                {!dropdownItems ? (
+                  <Link href={path} onClick={() => setIsMobileMenuOpen(false)}>
+                    {title}
+                  </Link>
+                ) : (
+                  <span className="cursor-pointer">{title}</span>
+                )}
+                {dropdownItems && <MdKeyboardArrowDown className={`block`} />}
+                {dropdownOpen === title && dropdownItems && (
+                  <ul className="absolute z-50 whitespace-nowrap top-full left-0 bg-white text-black shadow-md rounded-md py-2">
+                    {dropdownItems.map(({ title, path }) => (
+                      <li
+                        key={title}
+                        className="px-4 py-2 hover:bg-gray-100"
+                        onClick={() => {
+                          setDropdownOpen(null);
+                          setIsMobileMenuOpen(false);
+                        }}
+                      >
+                        <Link href={path}>{title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          {/* Hamburger Button for Mobile View */}
+          <div className="md:hidden flex items-center space-x-4">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-white"
