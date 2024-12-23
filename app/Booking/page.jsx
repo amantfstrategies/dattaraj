@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from 'react';
-// import ReCAPTCHA from 'react-google-recaptcha';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const Page = () => {
   const [formData, setFormData] = useState({
@@ -20,12 +22,12 @@ const Page = () => {
     });
   };
 
-  // const handleCaptchaChange = (value) => {
-  //   setFormData({
-  //     ...formData,
-  //     isRobotVerified: !!value,
-  //   });
-  // };
+  const handleCaptchaChange = (value) => {
+    setFormData({
+      ...formData,
+      isRobotVerified: !!value,
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,10 +39,10 @@ const Page = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 py-40">
-      <div className="bg-white shadow-md rounded px-8 py-6 w-full max-w-md">
+    <div className="min-h-screen h-fit flex items-center justify-center bg-gray-100 py-40">
+      <div className="bg-white h-fit shadow-md rounded px-8 py-6 w-full max-w-md">
         <h1 className="text-2xl font-bold mb-6 text-center">Enquiry Form</h1>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4 h-fit">
           <div>
             <label className="block text-gray-700">Name:</label>
             <input
@@ -97,18 +99,28 @@ const Page = () => {
               <option value="luxury bus">Luxury Bus</option>
             </select>
           </div>
-          {/* <div>
+
+
+          
+          <div>
             <ReCAPTCHA
-              sitekey="your-site-key"
+              sitekey="6LdKmKMqAAAAAIm78MX5--WmodZ2vF3GV8jrRv3T"
               onChange={handleCaptchaChange}
             />
-          </div> */}
-          <button
+          </div>
+
+          <div>
+            <Button
+            href='/contact'
             type="submit"
-            className="w-full bg-[#04DBC0] text-white py-2 px-4 rounded-md  focus:outline-none focus:ring focus:[#04DBC0]"
-          >
-            Submit
-          </button>
+            className="w-full bg-[#04DBC0] text-white py-2 px-4 rounded-md  focus:outline-none focus:ring focus:[#04DBC0]">
+              Submit
+            </Button>
+          </div>
+
+
+
+
         </form>
       </div>
     </div>

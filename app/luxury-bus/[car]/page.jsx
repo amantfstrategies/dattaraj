@@ -6,20 +6,20 @@ import Image from 'next/image';
 import { SiTicktick } from "react-icons/si";
 import { RxCrossCircled } from "react-icons/rx";
 import Link from 'next/link';
-import {CarData} from '../../luxuryBusesData'
+import {LuxuryBusesData} from '../../luxuryBusesData'
 import SimilarCars from '@/components/SimilarCars';
 
 
 function Page({params}) {
-  const pageData = CarData.find((car) => car.id === params.car);
+  const pageData = LuxuryBusesData.find((car) => car.id === params.car);
 
-  const currentIndex = CarData.findIndex((car) => car.id === params.car);
+  const currentIndex = LuxuryBusesData.findIndex((car) => car.id === params.car);
 
-  const nextCarsCount = Math.min(3, CarData.length - 1);  // Show up to 3 cars, but not more than available
+  const nextCarsCount = Math.min(3, LuxuryBusesData.length - 1);  // Show up to 3 cars, but not more than available
   const nextCars = [];
   
   for (let i = 1; i <= nextCarsCount; i++) {
-    nextCars.push(CarData[(currentIndex + i) % CarData.length]);
+    nextCars.push(LuxuryBusesData[(currentIndex + i) % LuxuryBusesData.length]);
   }
   
   return (
