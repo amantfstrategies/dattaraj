@@ -101,7 +101,8 @@ export default function Header() {
             <div className="flex items-center md:space-x-2 flex-row">
               <CiAlarmOn className="text-[#04DBC0]" />
               <h1 className="text-[10px] md:text-sm">
-                <span className="whitespace-nowrap">Mon - Fri , 10:30</span> <span> To 06:00</span>
+                <span className="whitespace-nowrap">Mon - Fri , 10:30</span>{" "}
+                <span> To 06:00</span>
               </h1>
             </div>
           </div>
@@ -140,7 +141,9 @@ export default function Header() {
             {navLinks.map(({ title, path, dropdownItems }) => (
               <li
                 key={title}
-                className={`relative flex hover:text-[#04DBC0] items-center space-x-1 ${activeTab === title ? "text-[#04DBC0]" : ""}`}
+                className={`relative flex hover:text-[#04DBC0] items-center space-x-1 ${
+                  activeTab === title ? "text-[#04DBC0]" : ""
+                }`}
                 onMouseEnter={() => dropdownItems && setDropdownOpen(title)}
                 onMouseLeave={() => dropdownItems && setDropdownOpen(null)}
               >
@@ -170,6 +173,9 @@ export default function Header() {
                 )}
               </li>
             ))}
+            <li>
+              <Link href="/booking">Booking</Link>
+            </li>
           </ul>
 
           {/* Mobile View */}
@@ -183,7 +189,9 @@ export default function Header() {
             {navLinks.map(({ title, path, dropdownItems }) => (
               <li
                 key={title}
-                className={`relative flex hover:text-[#04DBC0] items-center space-x-1 ${activeTab === title ? "text-[#04DBC0]" : ""}`}
+                className={`relative flex hover:text-[#04DBC0] items-center space-x-1 ${
+                  activeTab === title ? "text-[#04DBC0]" : ""
+                }`}
                 onMouseEnter={() => dropdownItems && setDropdownOpen(title)}
                 onMouseLeave={() => dropdownItems && setDropdownOpen(null)}
               >
