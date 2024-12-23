@@ -48,7 +48,7 @@ export default function Header() {
       ],
     },
 
-    { title: "Booking", path: "/booking", showUpArrow: false },
+    { title: "Booking", path: "/contact", showUpArrow: false },
   ];
 
   useEffect(() => {
@@ -173,9 +173,7 @@ export default function Header() {
                 )}
               </li>
             ))}
-            <li>
-              <Link href="/booking">Booking</Link>
-            </li>
+            
           </ul>
 
           {/* Mobile View */}
