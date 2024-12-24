@@ -40,59 +40,61 @@ const Page = () => {
 
   return (
     <div className="min-h-screen h-fit flex items-center justify-center px-4 bg-gray-100 py-40">
-      <div className="bg-white h-fit shadow-md rounded px-8 py-6 w-full max-w-md">
+      <div className="bg-white h-fit shadow-md rounded px-8 py-8 w-full max-w-md">
         <h1 className="text-2xl font-bold mb-6 text-center">Enquiry Form</h1>
         <form onSubmit={handleSubmit} className="space-y-4 h-fit">
           <div>
-            <label className="block text-gray-700">Name:</label>
+            {/* <label className="block text-gray-700">Name:</label> */}
             <input
               type="text"
               name="name"
+              placeholder='Name'
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#04DBC0] "
             />
           </div>
           <div>
-            <label className="block text-gray-700">Mobile:</label>
+            {/* <label className="block text-gray-700">Mobile:</label> */}
             <input
               type="tel"
               name="mobile"
+              placeholder='+91'
               value={formData.mobile}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#04DBC0]"
             />
           </div>
           <div>
-            <label className="block text-gray-700">City:</label>
             <input
               type="text"
               name="city"
+              placeholder='City'
               value={formData.city}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#04DBC0]"
             />
           </div>
           <div>
-            <label className="block text-gray-700">Message:</label>
             <textarea
               name="message"
+              placeholder='Message'
               value={formData.message}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#04DBC0]"
             ></textarea>
           </div>
           <div>
-            <label className="block text-gray-700">Vehicle Type:</label>
             <select
               name="vehicleType"
               value={formData.vehicleType}
               onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+              placeholder='Vehicle Type'
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#04DBC0]"
             >
               <option value="car">Car</option>
               <option value="mini bus">Mini Bus</option>
@@ -106,6 +108,7 @@ const Page = () => {
             <ReCAPTCHA
               sitekey="6LdKmKMqAAAAAIm78MX5--WmodZ2vF3GV8jrRv3T"
               onChange={handleCaptchaChange}
+              className="w-full flex items-center justify-center"
             />
           </div>
 

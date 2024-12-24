@@ -3,16 +3,18 @@ import React from "react";
 
 const WelcomeSection = () => {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black bg-opacity-20">
-      <Image
-        src="/bgimage.jpg"
-        alt="Background"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-        priority
-        className="z-[-1]"
-      />
+    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black/40 ">
+      {/* Background Video */}
+      <div className="fixed top-0 left-0 w-full h-full z-[-1]">
+        <video
+          className="w-full h-full object-cover"
+          src="/welcome.mp4"
+          autoPlay
+          muted
+          loop
+        ></video>
+      </div>
+
 
       {/* Foreground Content */}
       <h1 className="text-4xl font-[900] text-white text-center">
