@@ -10,6 +10,7 @@ const Page = () => {
     mobile: '',
     city: '',
     message: '',
+    email:'',
     vehicleType: 'car',
     isRobotVerified: false,
   });
@@ -29,11 +30,33 @@ const Page = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    if (!formData.isRobotVerified) {
-      alert('Please confirm you are not a robot.');
-      return;
+    // if (!formData.isRobotVerified) {
+    //   alert('Please confirm you are not a robot.');
+    //   return;
+    // }
+    try {
+      const response = await fetch('/api/sendenquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },  
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {        
+        setFormData({
+          name: '',
+          mobile: '',
+          city: '',
+          message: '',
+          email:'',
+          vehicleType: 'car',
+          isRobotVerified: false, 
+        })
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
     }
     console.log('Form submitted:', formData);
   };
@@ -50,6 +73,18 @@ const Page = () => {
               name="name"
               placeholder='Name'
               value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#04DBC0] "
+            />
+          </div>
+          <div>
+            {/* <label className="block text-gray-700">Name:</label> */}
+            <input
+              type="text"
+              name="email"
+              placeholder='Email'
+              value={formData.email}
               onChange={handleChange}
               required
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#04DBC0] "
