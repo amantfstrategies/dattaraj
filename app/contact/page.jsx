@@ -32,10 +32,10 @@ const Page = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    // if (!formData.isRobotVerified) {
-    //   alert('Please confirm you are not a robot.');
-    //   return;
-    // }
+    if (!formData.isRobotVerified) {
+      alert('Please confirm you are not a robot.');
+      return;
+    }
     try {
       const response = await fetch('/api/sendenquiry', {
         method: 'POST',
@@ -58,7 +58,7 @@ const Page = () => {
     } catch (error) {
       console.error('Error submitting form:', error);
     }
-    console.log('Form submitted:', formData);
+    // console.log('Form submitted:', formData);
   };
 
   return (
@@ -75,7 +75,7 @@ const Page = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#04DBC0] "
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#63e4af] "
             />
           </div>
           <div>
@@ -87,7 +87,7 @@ const Page = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#04DBC0] "
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#63e4af] "
             />
           </div>
           <div>
@@ -99,7 +99,7 @@ const Page = () => {
               value={formData.mobile}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#04DBC0]"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#63e4af]"
             />
           </div>
           <div>
@@ -110,7 +110,7 @@ const Page = () => {
               value={formData.city}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#04DBC0]"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#63e4af]"
             />
           </div>
           <div>
@@ -120,7 +120,7 @@ const Page = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#04DBC0]"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#63e4af]"
             ></textarea>
           </div>
           <div>
@@ -129,7 +129,7 @@ const Page = () => {
               value={formData.vehicleType}
               onChange={handleChange}
               placeholder='Vehicle Type'
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#04DBC0]"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#63e4af]"
             >
               <option value="car">Car</option>
               <option value="mini bus">Mini Bus</option>
@@ -151,7 +151,7 @@ const Page = () => {
             <Button
             href='/contact'
             type="submit"
-            className="w-full bg-[#04DBC0] text-white py-2 px-4 rounded-md  focus:outline-none focus:ring focus:[#04DBC0]">
+            className="w-full bg-[#63e4af] text-white py-2 px-4 rounded-md  focus:outline-none focus:ring focus:[#63e4af]">
               Submit
             </Button>
           </div>

@@ -4,6 +4,7 @@ import { AiOutlineControl } from "react-icons/ai";
 export const MiniBusesData = [
   {
     id: "14-seat-minibus",
+    limit: "10 hrs / 100 km",
     car: {
       name: "14 Seater AC/ Non Ac Pushback Seat",
       image: "/cars/temo-traveller.png",
@@ -52,6 +53,7 @@ export const MiniBusesData = [
 
   {
     id: "17-seat-minibus",
+    limit: "10 hrs / 100 km",
     car: {
       name: "17 Seater AC/ Non Ac Pushback Seat",
       image: "/cars/temo-traveller.png",
@@ -98,6 +100,7 @@ export const MiniBusesData = [
 
   {
     id: "20-seat-minibus",
+    limit: "10 hrs / 100 km",
     car: {
       name: "20 Seater AC/ Non Ac Pushback Seat",
       image: "/cars/temo-traveller.png",

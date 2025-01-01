@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaCar } from "react-icons/fa";
-const CarCard = ({ car, id, vehicleName }) => {
+const CarCard = ({ car, id, vehicleName, limit }) => {
   return (
     // <Link href={`/${vehicleName}/${id}`}>
       <div className="bg-white shadow-lg rounded-md overflow-hidden w-full transform transition-transform duration-300 relative group">
@@ -19,18 +19,18 @@ const CarCard = ({ car, id, vehicleName }) => {
         {/* Details Section */}
         <div className=" flex flex-col items-center justify-start absolute z-40 top-[75%] w-full group-hover:top-0 transition-all duration-1000 overflow-hidden">
 
-          <div className=" items-center  py-2 bg-[#04DBC0] backdrop-blur-md w-full p-4 h-16">
+          <div className=" items-center  py-2 bg-[#63e4af] backdrop-blur-md w-full p-4 h-16">
             <h2 className="text-lg font-bold text-gray-800 ">{car.name}</h2>
-            <p className=" text-black">8 Hrs. / 80 km</p>
+            <p className=" text-black">{limit}</p>
           </div>
           
           <ul className="space-y-1  w-full px-4 bg-zinc-900 text-white  h-64">
             <div className="flex flex-col w-full justify-start">
               {car.features.map((feature, index) => (
                 <div key={index} className="flex items-center justify-between w-full py-2">
-                  {/* <feature.icon className="mr-2 text-[#04DBC0]" /> */}
+                  {/* <feature.icon className="mr-2 text-[#63e4af]" /> */}
                   <span className="flex flex-row justify-center items-center">
-                  <FaCar className="font-[700] text-xl text-[#04DBC0]"/>
+                  <FaCar className="font-[700] text-xl text-[#63e4af]"/>
                   <h2 className="px-2">{feature?.name}</h2>
                   </span>
                   
@@ -54,8 +54,8 @@ const CarList = ({ cars, vehicleName }) => {
         Our {vehicleName.charAt(0).toUpperCase() + vehicleName.slice(1)}
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {cars.map(({ id, car }) => (
-          <CarCard key={id} id={id} car={car} vehicleName={vehicleName} />
+        {cars.map(({ id, car, limit }) => (
+          <CarCard key={id} id={id} car={car} vehicleName={vehicleName} limit={limit} />
         ))}
       </div>
     </div>

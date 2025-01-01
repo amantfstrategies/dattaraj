@@ -189,7 +189,7 @@ const CarouselNext = React.forwardRef(({ className, variant = "outline", size = 
       onClick={()=>{
         
         scrollNext()
-        console.log("props:", props)
+        // console.log("props:", props)
         props.handleNext();
       }}
       {...props}>

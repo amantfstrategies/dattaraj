@@ -6,7 +6,7 @@ import { IoIosHeartEmpty } from "react-icons/io";
 
 const WhyChooseUs = () => {
   return (
-    <div className='flex flex-col h-fit space-y-1 bg-[#04DBC0] text-white text-center items-center justify-center py-16'>
+    <div className='flex flex-col h-fit space-y-1 bg-[#63e4af] text-white text-center items-center justify-center py-16'>
         <h1 className='text-4xl font-[700]'>
             Why Choose Us
         </h1>

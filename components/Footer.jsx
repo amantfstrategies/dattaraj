@@ -37,16 +37,16 @@ const Footer = () => {
             </div>
 
             <div className="flex text-base items-start text-start space-x-1 md:space-x-4">
-            <button className="transition-transform bg-[#04DBC0] p-3 rounded-full transform duration-300 hover:scale-110 active:scale-90">
+            <button className="transition-transform bg-[#63e4af] p-3 rounded-full transform duration-300 hover:scale-110 active:scale-90">
               <FaInstagram />
             </button>
-            <button className="transition-transform bg-[#04DBC0] p-3 rounded-full transform duration-300 hover:scale-110 active:scale-90">
+            <button className="transition-transform bg-[#63e4af] p-3 rounded-full transform duration-300 hover:scale-110 active:scale-90">
               <FaTwitter />
             </button>
-            <button className="transition-transform bg-[#04DBC0] p-3 rounded-full transform duration-300 hover:scale-110 active:scale-90">
+            <button className="transition-transform bg-[#63e4af] p-3 rounded-full transform duration-300 hover:scale-110 active:scale-90">
               <FaFacebookF />
             </button>
-            <button className="transition-transform bg-[#04DBC0] p-3 rounded-full transform duration-300 hover:scale-110 active:scale-90">
+            <button className="transition-transform bg-[#63e4af] p-3 rounded-full transform duration-300 hover:scale-110 active:scale-90">
               <FaLinkedin />
             </button>
           </div>

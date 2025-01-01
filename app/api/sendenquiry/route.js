@@ -32,9 +32,9 @@ async function main(name, email, message, phone, city, vehicleType) {
 
 export const POST = async (req) => {
     const { name, email, message, mobile, city, vehicleType } = await req.json()
-    console.log("backend",name, email, message, mobile);
+    // console.log("backend",name, email, message, mobile);
     try {
-        console.log("env",process.env.EMAIL_ADDRESS, process.env.EMAIL_PASSWORD);
+        // console.log("env",process.env.EMAIL_ADDRESS, process.env.EMAIL_PASSWORD);
         await main(name, email, message, mobile, city, vehicleType);
         return new Response(JSON.stringify({ success: true }), { status: 200 })
     } catch (error) {

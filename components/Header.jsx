@@ -12,6 +12,10 @@ import {
 import { CiLocationOn, CiMobile4, CiAlarmOn } from "react-icons/ci";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi"; // Import the hamburger icon
+import { CarData } from "@/app/CarData";
+import { MiniBusesData } from "@/app/MiniBusesData";
+import { LuxuryBusesData } from "@/app/luxuryBusesData";
+import path from "path";
 
 export default function Header() {
   const pathname = usePathname();
@@ -20,32 +24,23 @@ export default function Header() {
   const [bgColor, setBgColor] = useState("rgba(0, 0, 0, 0.3)");
   const [dropdownOpen, setDropdownOpen] = useState(null);
 
+
   const navLinks = [
     { title: "Home", path: "/", showUpArrow: false },
     {
       title: "Cars",
-      dropdownItems: [
-        { title: "Audi-A3", path: "/cars" },
-        { title: "Innova Cresta", path: "/cars" },
-        { title: "Suzuki Swift", path: "/cars" },
-        { title: "Honda Civic", path: "/cars" },
-        { title: "Honda City", path: "/cars" },
-      ],
+      path: "/cars",
+      dropdownItems: CarData,
     },
     {
       title: "Luxury-bus",
-      dropdownItems: [
-        { title: "Volvo", path: "/luxury-bus" },
-        { title: "Mercedes", path: "/luxury-bus" },
-      ],
+      path  : "/luxury-bus",
+      dropdownItems: LuxuryBusesData,
     },
     {
       title: "Mini-bus",
-      dropdownItems: [
-        { title: "Force Traveler", path: "/mini-bus" },
-        { title: "Tata Starbus", path: "/mini-bus" },
-        { title: "Tempo Traveler", path: "/mini-bus" },
-      ],
+      path: "/mini-bus",
+      dropdownItems: MiniBusesData,
     },
 
     { title: "Booking", path: "/contact", showUpArrow: false },
@@ -85,21 +80,21 @@ export default function Header() {
         <div className="flex flex-col md:flex-row justify-between px-4 items-center">
           <div className="flex space-x-1 md:space-x-8 flex-row mr-auto">
             <div className="flex items-center space-x-2 flex-row">
-              <CiLocationOn className="text-[#04DBC0]" />
+              <CiLocationOn className="text-[#63e4af]" />
               <h1 className="text-[10px] md:text-sm whitespace-nowrap">
                 184 Main Street East
               </h1>
             </div>
 
             <div className="flex items-center space-x-2 flex-row">
-              <CiMobile4 className="text-[#04DBC0]" />
+              <CiMobile4 className="text-[#63e4af]" />
               <h1 className="text-[10px] md:text-sm whitespace-nowrap">
                 +91 78419 59650
               </h1>
             </div>
 
             <div className="flex items-center md:space-x-2 flex-row">
-              <CiAlarmOn className="text-[#04DBC0]" />
+              <CiAlarmOn className="text-[#63e4af]" />
               <h1 className="text-[10px] md:text-sm">
                 <span className="whitespace-nowrap">Mon - Fri , 10:30</span>{" "}
                 <span> To 06:00</span>
@@ -141,8 +136,8 @@ export default function Header() {
             {navLinks.map(({ title, path, dropdownItems }) => (
               <li
                 key={title}
-                className={`relative flex hover:text-[#04DBC0] items-center space-x-1 ${
-                  activeTab === title ? "text-[#04DBC0]" : ""
+                className={`relative flex hover:text-[#63e4af] items-center space-x-1 ${
+                  activeTab === title ? "text-[#63e4af]" : ""
                 }`}
                 onMouseEnter={() => dropdownItems && setDropdownOpen(title)}
                 onMouseLeave={() => dropdownItems && setDropdownOpen(null)}
@@ -156,18 +151,21 @@ export default function Header() {
                 )}
                 {dropdownItems && <MdKeyboardArrowDown className={`block`} />}
                 {dropdownOpen === title && dropdownItems && (
+                  // console.log("title", title),
+                  // console.log("dropdownItems", dropdownItems),
+                  // console.log("path", path),
                   <ul key={title} className="absolute z-50 whitespace-nowrap top-full left-0 bg-white text-black shadow-md rounded-md py-2">
-                    {dropdownItems.map(({ title, path }) => (
-                      <Link key={title} href={path}>
+                    {dropdownItems.map((car) => (
+                      <Link key={car.id} href={path}>
                       <li
-                        key={title}
+                        key={car.id}
                         className="px-4 py-2 hover:bg-gray-100"
                         onClick={() => {
                           setDropdownOpen(null);
                           setIsMobileMenuOpen(false);
                         }}
                       >
-                        {title}
+                        {car.car.name}
                       </li>
                       </Link>
                     ))}
@@ -189,8 +187,8 @@ export default function Header() {
             {navLinks.map(({ title, path, dropdownItems }) => (
               <li
                 key={title}
-                className={`relative flex hover:text-[#04DBC0] items-center space-x-1 ${
-                  activeTab === title ? "text-[#04DBC0]" : ""
+                className={`relative flex hover:text-[#63e4af] items-center space-x-1 ${
+                  activeTab === title ? "text-[#63e4af]" : ""
                 }`}
                 onMouseEnter={() => dropdownItems && setDropdownOpen(title)}
                 onMouseLeave={() => dropdownItems && setDropdownOpen(null)}
@@ -205,16 +203,16 @@ export default function Header() {
                 {dropdownItems && <MdKeyboardArrowDown className={`block`} />}
                 {dropdownOpen === title && dropdownItems && (
                   <ul className="absolute z-50 whitespace-nowrap top-full left-0 bg-white text-black shadow-md rounded-md py-2">
-                    {dropdownItems.map(({ title, path }) => (
+                    {dropdownItems.map((car) => (
                       <li
-                        key={title}
+                        key={car.id}
                         className="px-4 py-2 hover:bg-gray-100"
                         onClick={() => {
                           setDropdownOpen(null);
                           setIsMobileMenuOpen(false);
                         }}
                       >
-                        <Link href={path}>{title}</Link>
+                        <Link href={path}>{car.car.name}</Link>
                       </li>
                     ))}
                   </ul>
