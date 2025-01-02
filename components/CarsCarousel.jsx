@@ -46,7 +46,7 @@ const CarsCarousel = () => {
                       className="w-full h-fit my-0 py-0"
                     />
                     <span className="text-3xl font-semibold">{car.name}</span>
-                    <button className="my-8 py-2 px-8 rounded-sm font-[300] text-[#63e4af] bg-black hover:font-[400] hover:bg-[#2c2b2b]">
+                    <button className="my-8 py-2 px-8 rounded-sm font-[300] text-[#4BC1B3] bg-black hover:font-[400] hover:bg-[#2c2b2b]">
                       View Car
                     </button>
                   </CardContent>

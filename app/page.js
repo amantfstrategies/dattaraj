@@ -146,7 +146,7 @@ function Page() {
               </SelectContent>
             </Select>
             {/* 
-            <button className="px-12 w-full py-2 bg-[#63e4af] text-white rounded hover:bg-[#03a39c] transition duration-300">
+            <button className="px-12 w-full py-2 bg-[#4BC1B3] text-white rounded hover:bg-[#03a39c] transition duration-300">
               Search
             </button> */}
           </div>

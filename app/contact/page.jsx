@@ -75,7 +75,7 @@ const Page = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#63e4af] "
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#4BC1B3] "
             />
           </div>
           <div>
@@ -87,7 +87,7 @@ const Page = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#63e4af] "
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#4BC1B3] "
             />
           </div>
           <div>
@@ -99,7 +99,7 @@ const Page = () => {
               value={formData.mobile}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#63e4af]"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#4BC1B3]"
             />
           </div>
           <div>
@@ -110,7 +110,7 @@ const Page = () => {
               value={formData.city}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#63e4af]"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#4BC1B3]"
             />
           </div>
           <div>
@@ -120,7 +120,7 @@ const Page = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#63e4af]"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#4BC1B3]"
             ></textarea>
           </div>
           <div>
@@ -129,7 +129,7 @@ const Page = () => {
               value={formData.vehicleType}
               onChange={handleChange}
               placeholder='Vehicle Type'
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#63e4af]"
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#4BC1B3]"
             >
               <option value="car">Car</option>
               <option value="mini bus">Mini Bus</option>
@@ -151,7 +151,7 @@ const Page = () => {
             <Button
             href='/contact'
             type="submit"
-            className="w-full bg-[#63e4af] text-white py-2 px-4 rounded-md  focus:outline-none focus:ring focus:[#63e4af]">
+            className="w-full bg-[#4BC1B3] text-white py-2 px-4 rounded-md  focus:outline-none focus:ring focus:[#4BC1B3]">
               Submit
             </Button>
           </div>

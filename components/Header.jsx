@@ -80,21 +80,21 @@ export default function Header() {
         <div className="flex flex-col md:flex-row justify-between px-4 items-center">
           <div className="flex space-x-1 md:space-x-8 flex-row mr-auto">
             <div className="flex items-center space-x-2 flex-row">
-              <CiLocationOn className="text-[#63e4af]" />
+              <CiLocationOn className="text-[#4BC1B3]" />
               <h1 className="text-[10px] md:text-sm whitespace-nowrap">
                 184 Main Street East
               </h1>
             </div>
 
             <div className="flex items-center space-x-2 flex-row">
-              <CiMobile4 className="text-[#63e4af]" />
+              <CiMobile4 className="text-[#4BC1B3]" />
               <h1 className="text-[10px] md:text-sm whitespace-nowrap">
                 +91 78419 59650
               </h1>
             </div>
 
             <div className="flex items-center md:space-x-2 flex-row">
-              <CiAlarmOn className="text-[#63e4af]" />
+              <CiAlarmOn className="text-[#4BC1B3]" />
               <h1 className="text-[10px] md:text-sm">
                 <span className="whitespace-nowrap">Mon - Fri , 10:30</span>{" "}
                 <span> To 06:00</span>
@@ -136,8 +136,8 @@ export default function Header() {
             {navLinks.map(({ title, path, dropdownItems }) => (
               <li
                 key={title}
-                className={`relative flex hover:text-[#63e4af] items-center space-x-1 ${
-                  activeTab === title ? "text-[#63e4af]" : ""
+                className={`relative flex hover:text-[#4BC1B3] items-center space-x-1 ${
+                  activeTab === title ? "text-[#4BC1B3]" : ""
                 }`}
                 onMouseEnter={() => dropdownItems && setDropdownOpen(title)}
                 onMouseLeave={() => dropdownItems && setDropdownOpen(null)}
@@ -187,8 +187,8 @@ export default function Header() {
             {navLinks.map(({ title, path, dropdownItems }) => (
               <li
                 key={title}
-                className={`relative flex hover:text-[#63e4af] items-center space-x-1 ${
-                  activeTab === title ? "text-[#63e4af]" : ""
+                className={`relative flex hover:text-[#4BC1B3] items-center space-x-1 ${
+                  activeTab === title ? "text-[#4BC1B3]" : ""
                 }`}
                 onMouseEnter={() => dropdownItems && setDropdownOpen(title)}
                 onMouseLeave={() => dropdownItems && setDropdownOpen(null)}

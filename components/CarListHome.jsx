@@ -19,7 +19,7 @@ const CarCard = ({ car, id, vehicleName, limit }) => {
         {/* Details Section */}
         <div className=" flex flex-col items-center justify-start absolute z-40 top-[75%] w-full group-hover:top-0 transition-all duration-1000 overflow-hidden">
 
-          <div className=" items-center  py-2 bg-[#63e4af] backdrop-blur-md w-full p-4 h-16">
+          <div className=" items-center  py-2 bg-[#4BC1B3] backdrop-blur-md w-full p-4 h-16">
             <h2 className="text-lg font-bold text-gray-800 ">{car.name}</h2>
             <p className=" text-black">{limit}</p>
           </div>
@@ -28,9 +28,9 @@ const CarCard = ({ car, id, vehicleName, limit }) => {
             <div className="flex flex-col w-full justify-start">
               {car.features.map((feature, index) => (
                 <div key={index} className="flex items-center justify-between w-full py-2">
-                  {/* <feature.icon className="mr-2 text-[#63e4af]" /> */}
+                  {/* <feature.icon className="mr-2 text-[#4BC1B3]" /> */}
                   <span className="flex flex-row justify-center items-center">
-                  <FaCar className="font-[700] text-xl text-[#63e4af]"/>
+                  <FaCar className="font-[700] text-xl text-[#4BC1B3]"/>
                   <h2 className="px-2">{feature?.name}</h2>
                   </span>
                   

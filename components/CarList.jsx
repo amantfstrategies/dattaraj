@@ -27,9 +27,9 @@ const CarCard = ({ car, id, vehicleName, limit }) => {
             <div className="flex flex-col w-full justify-start">
               {car.features.map((feature, index) => (
                 <div key={index} className="flex items-center justify-between w-full text-gray-500 py-2">
-                  {/* <feature.icon className="mr-2 text-[#63e4af]" /> */}
+                  {/* <feature.icon className="mr-2 text-[#4BC1B3]" /> */}
                   <span className="flex flex-row justify-center items-center">
-                  <FaCar className="font-[700] text-xl text-[#63e4af]"/>
+                  <FaCar className="font-[700] text-xl text-[#4BC1B3]"/>
                   <h2 className="px-2">{feature?.name}</h2>
                   </span>
                   
